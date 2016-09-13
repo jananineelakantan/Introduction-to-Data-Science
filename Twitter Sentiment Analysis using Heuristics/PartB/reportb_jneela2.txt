@@ -1,0 +1,111 @@
+**********************HOMEWORK 3 REPORT B**************************
+
+Name: Janani Neelakantan
+UIN : 670805407
+ID  : jneela2
+
+SENTIMENT OF EACH TWEET
+
+Algorithm
+----------------
+Create a dictionary using data from AFINN-111.txt with term as the key and its sentiment score as the value
+Create a list of tweets using data from streaming_output_full.txt
+Clean the tweet data by removing all special characters. Retain certain emoticons. Form a new list of cleaned tweets.
+Get each tweet in the cleaned list. Split the tweet into list of words. Find the sentiment score of each word using the sentiment score dictionary. For those words with a sentiment score specified in AFINN-111.txt, consider that score else take 0. Add the score for each word in the tweet to get whole tweet sentiment score.
+Create a dictionary with each unique tweet as the key and sentiment score as the value.
+Sort the dictionary in reverse order based on values. The first 10 values give the 10 highest sentiment tweets.The bottom 10 values give the 10 lowest sentiment tweets.
+
+Note: The code takes a while to execute. This is because each word in each tweet needs to be compared with the sentiment dictionary for the calculation.
+
+HIGHEST AND LOWEST SENTIMENT TWEETS
+-----------------------------------------
+[14]: [rt manjiahir my best wishes to honble smritiirani ji on his birthday may god bless him with good health bright future amp a successful]
+[13]: [rt marclamonthill thepeoplevojsimpson is amazing it better win all the awards]
+[12]: [brisbanes playful affectionate joycea pleasure filled unforgettable passionate adventure httpstcojjvas8ksuw httpstcoso8gcl2dtn]
+[11]: [rt chardgelunited its great to be happy but its even better to bring happiness to others
+
+chardgel animnabuwanna]
+[11]: [great gift coloringbook relieve stess amp have fun free download wpurchase httpstcophohieyeyh]
+[11]: [jamesimmekus this is  your daily reminder that you are a beautiful and amazing person have an awesome day]
+[11]: [justaylak this is your daily reminder that you are a beautiful and amazing person have an awesome day]
+[10]: [hes funny af been knowing him since elementary school and he think he cute now lmao  httpstco4regvrm2pd]
+[10]: [rt tarseminsan ksushma140 msgalltrading 
+healthy lifestyle is much more important than style??
+must adopt healthy amp the best one 
+ms]
+[10]: [rt qheilbroner huge cheers for rocky de la fuentes 2 votes in boise also wow idaho is a sanders blowout beyond imagination]
+[-10]: [rt kanyewest on another note i strongly dislike suit jackets i used the word dislike because i hate the word hate]
+[-10]: [all my brothers still my brothers good or bad right or wrong ill never leave my niggas on there own]
+[-11]: [i hate when guys try to play dumb bitch u know what im talking about who were you just w why are you on my line go to ur girlfriend ]
+[-12]: [rt drebae when your friend text you bitch check twitter amp you realize its no other choice but to log on amp drag bitches  httptco8]
+[-12]: [i know damn well a lot of niggas are mad about my glo up process cause it still aint over yet]
+[-12]: [that meninist shit is corny miss me with that woe is me bullshit cry baby ass lol]
+[-12]: [vtui14 oh shit bitch lmfaoooo im dead af ??????]
+[-14]: [axaa wait wtf no i mean im douchebag how did i mess up wtf]
+[-16]: [2royalpolitics this shit is fucking trash dude hop the fuck out of my mentions with ur trash as rap fucking clown httpstcomua8sfgqyh]
+[-21]: [lifeofdesiigner your a bitch ass dick ridding wanna be ass nigga tf you literally stole 1future entire flow amp style fucking cornball]
+
+
+HAPPIEST BREAKING BAD ACTOR
+
+Algorithm
+----------------------
+Create a dictionary using data from AFINN-111.txt with term as the key and its sentiment score as the value
+Create a dictionary with username as the key and list of tweets of each user as the value
+Clean the list of tweet data by removing all special characters. Retain certain emoticons. 
+For each tweet in the cleaned tweet list, compute the sentiment score. 
+Add all the sentiment scores to get total sentiment score for each user.
+Compute average sentiment score by dividing total sentiment score with the total number of tweets for each user.
+Create a dictionary with username as the key and average sentiment score as the value
+Sort the dictionary in descending order based on average sentiment score 
+
+AVERAGE SENTIMENT SCORE FOR EACH ACTOR
+-----------------------------------------
+[1.33]: [mrbobodenkirk]
+[1.1313131313131313]: [quiethandfilms]
+[0.9587628865979382]: [RjMitte]
+[0.9183673469387755]: [Krystenritter]
+[0.87]: [betsy_brandt]
+[0.8172043010752689]: [aaronpaul_8]
+[0.75]: [deanjnorris]
+[0.73]: [BryanCranston]
+[0.6666666666666666]: [CharlesEbaker]
+[0.4270833333333333]: [DanielMoncada80]
+[0.28125]: [LuisMoncada77]
+[-0.07291666666666667]: [mattjonesisdead]
+
+
+HAPPIEST STATE
+
+Algorithm
+-----------------------
+Create a dictionary from states_abbr.txt file with state abbreviation as the key and state name as the value
+Create a dictionary from AFINN-111.txt file with term as the key and sentiment score as the value
+Extract tweet text and location information from streaming_output_full.txt file.I have only considered user.location field for location since place and coordinate attributes were mostly null values in my sample data
+Form a list with each of its value being a {tweet,location} dictionary
+Find out if each location is a valid one by comparing the words in the location field with the state dictionary. Put the valid location abbreviation as the key into a dictionary and list of tweets as the value
+Clean the list of tweet data by removing all special characters. Retain certain emoticons. 
+For each tweet in the cleaned tweet list, compute the sentiment score.
+Add all the sentiment scores to get total sentiment score for each state.
+Compute average sentiment score by dividing total sentiment score with the total number of tweets for each state.
+Create a dictionary with state abbr as the key and average sentiment score as the value
+Sort the dictionary in descending order based on average sentiment score 
+
+Note: Biwords has not been handled
+
+HAPPIEST AND UNHAPPIEST STATES
+----------------------------------------
+[2.090909090909091]: [TN]
+[2.0]: [KY]
+[1.8]: [VA]
+[1.7142857142857142]: [ME]
+[1.6666666666666667]: [MD]
+[-0.6666666666666666]: [RI]
+[-1.0]: [SC]
+[-1.5]: [CT]
+[-1.75]: [AL]
+[-2.0]: [NC]
+
+
+
+

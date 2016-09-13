@@ -1,0 +1,102 @@
+*********************HOMEWORK 3 REPORT A***********************
+
+Name: Janani Neelakantan
+UIN : 670805407
+ID  : jneela2
+
+STREAMING API 
+
+fetch_samples() - Fetches a sample of current Twitter stream. The output of this is sent to streaming_output_full.txt
+		The statement line.strip().decode('utf-8') is required to remove unreadable characters from streaming_output_full.txt so that it                             is easier to use in further processing
+
+SEARCH API
+
+fetch_by_terms() - Fetches a sample of tweet data for the given term. Approximately 100 tweets for the term specified in command line.
+
+Search term: love
+Sample tweets: 
+RT @givenachancehl: I love it when Louis stands with his tummy out.
+RT @WSHHFANS: I love it when you call me big papaw, put your hands in the air, if your grandkids don't care.
+RT @DilliDurAst: The Modi government's continuing love affair with students.
+Love is an untamed force. When we try to control it, it destroys us. When we try to imprison it, it enslaves us.
+RT @goldenlamb13: @MitchellSances just popping in to show some love to a sweet friend for no other reason that \"just because\"
+
+USER API
+
+fetch_by_user_names() - Fetch 100 most recent tweets for each user given in user_names.txt
+
+Algorithm
+----------
+Create name list that contains all the names in user_names.txt file
+For each name in this list
+	Fetch 100 most recent tweets in the response
+        For each line in the reponse
+		Do json.loads of the response. This would give list of dictionaries. Each dictionary is a tweet.
+		For each dictionary in the list
+			Look for the "text" key. Append value of this key to a tweet list.This is the list of tweets for each username.
+			Print the result to a csv file
+
+Result in csv file will be of the form:
+user,tweet
+user1,tweet1
+user1,tweet2
+user1,tweet3
+....
+....
+....
+....
+user2,tweet1
+user2,tweet2
+user2,tweet3
+....
+...
+...
+...
+user n, tweetn
+
+TERM FREQUENCY
+
+Algorithm
+-----------------
+Create a list of stop words from the stopwords.txt file
+Create a list of tweets from the streaming_output_full.txt
+Clean the tweet data using regex. Remove all the special characters. Form a list of clean tweets.
+Create a new list removing the stop words from the clean tweets list
+Create a dictionary with each unique term as the key and no of occurences as the value
+Total no of occurrences of all the words in all tweets is given by sum of the values column in the dictionary
+Create a dictionary with each term as the key and its term freq as the value. Term freq is rounded off to 5 decimal places
+
+30 most frequent terms
+-----------------------
+rt 0.05926
+im 0.00627
+get 0.00528
+like 0.00486
+dont 0.00475
+love 0.00459
+amp 0.00457
+weather 0.00354
+one 0.0032
+know 0.0032
+people 0.00307
+new 0.00299
+u 0.00276
+want 0.00263
+got 0.00247
+never 0.00244
+time 0.00242
+go 0.00236
+really 0.00228
+ebgodgavemeyou 0.00223
+think 0.00223
+life 0.00223
+need 0.00221
+cant 0.00215
+day 0.00215
+make 0.00213
+would 0.00207
+youre 0.00205
+good 0.00205
+best 0.00202
+
+
